@@ -1,0 +1,18 @@
+<div class='container mt-3', style='width:30rem' >
+    <h2>Change Password:</h2>
+    <%= form_for @user , url: user_editpass_path(@user) , method: :patch do |u| %>
+        <div class="mt-3">
+            <%= u.label :current_pass, "Current Password:", class: 'form-label' %>
+            <%= u.password_field :current_pass , class: 'form-control' %>
+        </div>
+        <div class="mt-3">
+            <%= u.label :password , "New Password:" , class: 'form-label'%>
+            <%= u.password_field :password , class: 'form-control' %>
+        </div>
+        <div class="mt-3">
+            <%= u.label :password_confirmation, "New Password Confirmation:" , class:"form-label" %>
+            <%= u.password_field :password_confirmation  ,class: 'form-control' %>
+        </div>
+        <%= u.submit "Change Password" , class:'btn btn-outline-primary mt-4' %>
+    <% end %>
+</div>
