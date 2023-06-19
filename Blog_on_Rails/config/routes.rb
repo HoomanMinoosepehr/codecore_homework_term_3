@@ -20,5 +20,11 @@ Rails.application.routes.draw do
   post "/session" => 'sessions#create'
   delete '/session' => 'sessions#destroy'
 
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :posts
+    end
+  end
+
 
 end
