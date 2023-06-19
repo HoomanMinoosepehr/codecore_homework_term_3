@@ -33,5 +33,11 @@ module BlogOnRails
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    Rails.application.config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '127.0.0.1:8081'
+        resource '127.0.0.1.3000', headers: :any, methods: [:get, :post, :patch, :put], credentials: true
+      end
+    end
   end
 end
