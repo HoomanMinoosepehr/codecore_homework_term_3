@@ -16,23 +16,21 @@
     <title>Blog on Rails</title>
 </head>
 <body>
-    <!-- <div class="container">
-        <div class="container-fluid">
-            <nav class="navbar border-bottom border-bottom-dark" data-bs-theme="dark">
-                <div class="container-fluid justify-content-start" id="navbar">
-                    <a href="#" class="nav-link p-3">Welcome</a>
-                    <a href="#" class="nav-link p-3">Posts</a>
-                    <a href="#" class="nav-link p-3">New Post</a>
-                </div>
-            </nav>
-        </div>
-    </div> -->
     <div class="container">
-        <div class="navb">
-            <a href="#">Welcome</a>
-            <a href="#">Posts</a>
-            <a href="#">New Post</a>
+        <nav class="navb">
+            <a href="#" class="nav-item" target-id="welcome-page">Welcome</a>
+            <a href="#" class="nav-item" target-id="index-page">Posts</a>
+            <a href="#" class="nav-item" target-id="post-create">New Post</a>
             <div class="emp"></div>
+        </nav>
+        <div class="hide active box mt-3" id="welcome-page">
+            <h2 class="">Welcome to SPA Blog</h2>
+        </div>
+        <div class="hide mt-3 box" id="index-page">
+            <h3 class="">Posts</h3>
+            <ul id="show-list">
+
+            </ul>
         </div>
     </div>
     

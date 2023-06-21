@@ -1,6 +1,14 @@
+.hide {
+    display: none;
+}
+
+.hide.active {
+    display: block;
+}
+
 a {
     font-size: 1.3rem;
-    padding: 1.5rem;
+    padding: .8rem 2rem;
     margin: 0px;
     text-decoration: none;
     color: black;
@@ -12,11 +20,17 @@ a {
 }
 
 .navb {
-    /* border-bottom:3px solid rgba(0, 0, 0, 0.5); */
     display: flex;
 }
 
 .emp {
     border-bottom: 3px rgba(0, 0,0, 0.1) solid;
     flex-grow: 1;
+}
+
+.box {
+    border: solid rgba(0, 0, 0, 0.1) .15rem;
+    border-radius: 7px;
+    box-shadow: 0rem .1rem 4px;
+    padding: .5rem 1rem;
 }
