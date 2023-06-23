@@ -1,17 +1,19 @@
-import webApi from "./API";
+import webApi from "./API.js";
 
 const postsList = document.querySelector("#index #show-list");
 
 const navb = document.querySelectorAll(".nav-item");
 navb.forEach(element => {
-    element.addEventListener('click', showPage, false)
+    element.addEventListener("click", showPage, false)
 });
 
 function showPage(e, pageId) {
+    console.log('showpage')
     let pageName;
     if (e) {
         e.preventDefault();
-        pageName = e.target.attribute['target-id'].value;
+        pageName = e.target.attributes['target-id'].value;
+        console.log('hello')
     } else {
         pageName = pageId;
     };
@@ -22,7 +24,7 @@ function showPage(e, pageId) {
 
     document.querySelector(`.hide#${pageName}`).style.display = 'block';
     if (pageName === 'posts') {
-        showAll();
+        // showAll();
     };
 };
 
