@@ -20,7 +20,7 @@
         <nav class="navb">
             <a href="#" class="nav-item" target-id="welcome-page">Welcome</a>
             <a href="#" class="nav-item" target-id="index-page">Posts</a>
-            <a href="#" class="nav-item" target-id="post-create">New Post</a>
+            <a href="#" class="nav-item" target-id="create-post">New Post</a>
             <div class="emp"></div>
         </nav>
 
@@ -29,7 +29,7 @@
         </div>
 
         <div class="hide mt-3 box" id="index-page">
-            <h3 class="">Posts</h3>
+            <h3 class="mt-1">Posts</h3>
             <ul id="show-list">
 
             </ul>
@@ -39,7 +39,16 @@
             
         </div>
 
-        
+        <div class="hide box mt-3" id="create-post">
+            <h3 class="mt-1">New Post</h3>
+            <label class="form-labe mt-2" for="title">Title</label>
+            <input class="form-control" type="text" name="title" id="title" placeholder="Question Title" >
+            <label for="body" class="form-label mt-2">Body</label>
+            <textarea class="form-control" name="body" cols="30" rows="5" id="body" placeholder="Question Body"></textarea>
+            <button class="btn btn-secondary mt-3" id="post-create-btn">Create Post</button>
+        </div>
+
+
 
     </div>
     

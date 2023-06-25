@@ -14,7 +14,7 @@ class Api::V1::PostsController < Api::ApplicationController
         post = Post.new new_post
         post.user_id = 1
         if post.save
-            render json: {message: 'Post has created successfully!'}
+            render json: {post:post,message: 'Post has created successfully!'}
         else
             render json: {message: post.errors.messages}
         end 

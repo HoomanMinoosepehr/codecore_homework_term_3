@@ -2,6 +2,7 @@ import webApi from "./API.js";
 
 const postsList = document.querySelector("#show-list");
 const showpost = document.querySelector("#show-post");
+const post_create_btn = document.querySelector("#post-create-btn");
 
 const navb = document.querySelectorAll(".nav-item");
 navb.forEach(element => {
@@ -76,4 +77,21 @@ function deletePost(id) {
             .then(data => {
                 showPage(null, "index-page")
             })
-}
+};
+
+post_create_btn.addEventListener('click', () => {
+    let titleNode = document.querySelector("#create-post #title");
+    let bodyNode = document.querySelector("#create-post #body");
+    const title = titleNode.value;
+    const body = bodyNode.value;
+    const post = {title, body};
+    webApi.req(`posts`, post, "POST")
+            .then(data => {
+                showPost(data.post.id)
+                // console.log(data)
+                titleNode.value = "";
+                bodyNode.value = "";
+            }).catch(error => {
+                console.log(error)
+            })
+})
