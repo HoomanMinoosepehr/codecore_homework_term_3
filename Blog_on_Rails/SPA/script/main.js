@@ -1,6 +1,7 @@
 import webApi from "./API.js";
 
 const postsList = document.querySelector("#show-list");
+const showpost = document.querySelector("#show-post");
 
 const navb = document.querySelectorAll(".nav-item");
 navb.forEach(element => {
@@ -26,13 +27,53 @@ function showPage(e, pageId) {
     };
 };
 
+postsList.addEventListener('click', e => {
+    e.preventDefault();
+    if (e.target.matches(".product")) {
+        const id = e.target.dataset.id;
+        showPost(id);
+    }
+});
+
+showpost.addEventListener('click', e => {
+    e.preventDefault();
+    if (e.target.matches('.btn')){
+        if (e.target.dataset.func == 'edit'){
+            console.log('edit')
+        } else {
+            deletePost(e.target.dataset.id);
+        }
+    }
+})
+
 function showAll() {
     webApi.get('posts')
             .then( data => {
                 postsList.innerHTML = data.map(post => {
                     return `<li>
-                        <a class="fs-5" href="#">${post.id} - ${post.title}</a>
+                        <a class="fs-5 product" href="#" data-id=${post.id}>${post.id} - ${post.title}</a>
                     </li>`
                 }).join("")
+            })
+};
+
+function showPost(id) {
+    webApi.get(`posts/${id}`)
+            .then(data => {
+                showPage(null, 'show-post');
+                showpost.innerHTML = `
+                <h2>${data.title}</h2>
+                <p>${data.body}</p>
+                <div>
+                    <button class='btn btn-warning' id='edit-btn' data-id=${data.id} data-func='edit'>Edit</button>
+                    <button class='btn btn-danger' id='delete-btn' data-id=${data.id} data-func='delete'>Delete</button>
+                </div>`
+            })
+};
+
+function deletePost(id) {
+    webApi.req(`posts/${id}`, null, "DELETE")
+            .then(data => {
+                showPage(null, "index-page")
             })
 }

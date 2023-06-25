@@ -20,7 +20,7 @@ async function req(path, reqBody, method) {
             },
             body: JSON.stringify(reqBody)
         }
-        const response = await fetch(baseUrl + path , options)
+        const response = await fetch(baseUrl + path , options);
         return response.json();
 
     } catch (error) {
