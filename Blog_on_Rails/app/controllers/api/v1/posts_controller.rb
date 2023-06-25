@@ -23,7 +23,7 @@ class Api::V1::PostsController < Api::ApplicationController
     def update
         old_post = Post.find params[:id];
         if old_post.update new_post
-            render json: {message: 'Post has updated successfully!'}
+            render json: {post:old_post,message: 'Post has updated successfully!'}
         else
             render json: {message: post.errors.messages}
         end

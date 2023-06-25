@@ -3,6 +3,7 @@ import webApi from "./API.js";
 const postsList = document.querySelector("#show-list");
 const showpost = document.querySelector("#show-post");
 const post_create_btn = document.querySelector("#post-create-btn");
+const update_btn = document.querySelector("#update-btn");
 
 const navb = document.querySelectorAll(".nav-item");
 navb.forEach(element => {
@@ -39,13 +40,30 @@ postsList.addEventListener('click', e => {
 showpost.addEventListener('click', e => {
     e.preventDefault();
     if (e.target.matches('.btn')){
+        const id = e.target.dataset.id;
         if (e.target.dataset.func == 'edit'){
-            console.log('edit')
+            editPost(id);
         } else {
-            deletePost(e.target.dataset.id);
+            deletePost(id);
         }
     }
-})
+});
+
+post_create_btn.addEventListener('click', () => {
+    let titleNode = document.querySelector("#create-post #title");
+    let bodyNode = document.querySelector("#create-post #body");
+    const title = titleNode.value;
+    const body = bodyNode.value;
+    const post = {title, body};
+    webApi.req(`posts`, post, "POST")
+            .then(data => {
+                showPost(data.post.id)
+                titleNode.value = "";
+                bodyNode.value = "";
+            }).catch(error => {
+                console.log(error)
+            })
+});
 
 function showAll() {
     webApi.get('posts')
@@ -79,19 +97,27 @@ function deletePost(id) {
             })
 };
 
-post_create_btn.addEventListener('click', () => {
-    let titleNode = document.querySelector("#create-post #title");
-    let bodyNode = document.querySelector("#create-post #body");
+function editPost(id) {
+    webApi.get(`posts/${id}`)
+            .then(data => {
+                showPage(null, "edit-post");
+                document.querySelector("#edit-post #title").value = data.title;
+                document.querySelector("#edit-post #body").value = data.body;
+                document.querySelector('#edit-post #id').value = data.id;
+            })
+};
+
+update_btn.addEventListener("click", () => {
+    const titleNode = document.querySelector('#edit-post #title');
+    const bodyNode = document.querySelector("#edit-post #body");
+    const id = document.querySelector("#edit-post #id").value;
     const title = titleNode.value;
     const body = bodyNode.value;
-    const post = {title, body};
-    webApi.req(`posts`, post, "POST")
+    const update = {title, body};
+    webApi.req(`posts/${id}`, update, 'PATCH')
             .then(data => {
-                showPost(data.post.id)
-                // console.log(data)
+                showPost(data.post.id);
                 titleNode.value = "";
                 bodyNode.value = "";
-            }).catch(error => {
-                console.log(error)
             })
 })
