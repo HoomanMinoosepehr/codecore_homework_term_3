@@ -1,6 +1,6 @@
 import webApi from "./API.js";
 
-const postsList = document.querySelector("#index #show-list");
+const postsList = document.querySelector("#show-list");
 
 const navb = document.querySelectorAll(".nav-item");
 navb.forEach(element => {
@@ -8,12 +8,10 @@ navb.forEach(element => {
 });
 
 function showPage(e, pageId) {
-    console.log('showpage')
     let pageName;
     if (e) {
         e.preventDefault();
         pageName = e.target.attributes['target-id'].value;
-        console.log('hello')
     } else {
         pageName = pageId;
     };
@@ -23,19 +21,19 @@ function showPage(e, pageId) {
     });
 
     document.querySelector(`.hide#${pageName}`).style.display = 'block';
-    if (pageName === 'posts') {
-        // showAll();
+    if (pageName === 'index-page') {
+        showAll();
     };
 };
 
 function showAll() {
     webApi.get('posts')
-            .then(data => data.json())
+            // .then(data => data.json())
             .then( data => {
                 postsList.innerHTML = data.map(post => {
-                    `<li>
+                    return `<li>
                         ${post.title}
                     </li>`
-                })
+                }).join("")
             })
 }
