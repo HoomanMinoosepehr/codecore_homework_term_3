@@ -28,11 +28,10 @@ function showPage(e, pageId) {
 
 function showAll() {
     webApi.get('posts')
-            // .then(data => data.json())
             .then( data => {
                 postsList.innerHTML = data.map(post => {
                     return `<li>
-                        ${post.title}
+                        <a class="fs-5" href="#">${post.id} - ${post.title}</a>
                     </li>`
                 }).join("")
             })

@@ -6,13 +6,17 @@
     display: block;
 }
 
-a {
+a.nav-item {
     font-size: 1.3rem;
     padding: .8rem 2rem;
     margin: 0px;
     text-decoration: none;
     color: black;
     border-bottom: 3px solid rgba(0, 0,0, 0.1);
+}
+
+a {
+    text-decoration: none;
 }
 
 .current_selected {
