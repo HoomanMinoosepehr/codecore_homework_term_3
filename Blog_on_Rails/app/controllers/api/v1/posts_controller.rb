@@ -14,18 +14,18 @@ class Api::V1::PostsController < Api::ApplicationController
         post = Post.new new_post
         post.user_id = 1
         if post.save
-            render json: {post:post,message: 'Post has created successfully!'}
+            render json: {post:post, message: {condition: 'success', text:'Post has been created successfully!'}}
         else
-            render json: {message: post.errors.messages}
+            render json: {message: {condition:'danger', text: 'Something went wrong, Please try again.'}}
         end 
     end
 
     def update
         old_post = Post.find params[:id];
         if old_post.update new_post
-            render json: {post:old_post,message: 'Post has updated successfully!'}
+            render json: {post:old_post, message: {condition: 'success', text: 'Post has been updated successfully!'}}
         else
-            render json: {message: post.errors.messages}
+            render json: {message: {condition: 'danger',text: 'Something went wrong, Please try again later.'}}
         end
 
     end
@@ -33,9 +33,9 @@ class Api::V1::PostsController < Api::ApplicationController
     def destroy 
         post = Post.find params[:id]
         if post.destroy
-            render json: {message: "Post has been deleted successfully!"}
+            render json: {message: {condition: 'warning', text:"Post has been deleted successfully!"}}
         else
-            render json: {message: post.errors.messages}
+            render json: {message: {condition: 'warning', text: 'Something went wrong, Please try again'}}
         end
     end
 

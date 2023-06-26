@@ -11,6 +11,7 @@ navb.forEach(element => {
 });
 
 function showPage(e, pageId) {
+    removeAlert()
     let pageName;
     if (e) {
         e.preventDefault();
@@ -57,6 +58,7 @@ post_create_btn.addEventListener('click', () => {
     const post = {title, body};
     webApi.req(`posts`, post, "POST")
             .then(data => {
+                showAlert(data.message)
                 showPost(data.post.id)
                 titleNode.value = "";
                 bodyNode.value = "";
@@ -93,6 +95,7 @@ function showPost(id) {
 function deletePost(id) {
     webApi.req(`posts/${id}`, null, "DELETE")
             .then(data => {
+                showAlert(data.message)
                 showPage(null, "index-page")
             })
 };
@@ -116,8 +119,21 @@ update_btn.addEventListener("click", () => {
     const update = {title, body};
     webApi.req(`posts/${id}`, update, 'PATCH')
             .then(data => {
+                showAlert(data.message)
                 showPost(data.post.id);
                 titleNode.value = "";
                 bodyNode.value = "";
             })
-})
+});
+
+function showAlert(message) {
+    document.getElementById("alert-info").innerHTML = `
+    <div class="alert alert-${message.condition} alert-dismissible fade show" role="alert">
+        ${message.text}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>`
+};
+
+function removeAlert() {
+    document.getElementById('alert-info').innerHTML = ""
+};
