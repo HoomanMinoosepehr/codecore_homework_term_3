@@ -6,7 +6,7 @@ async function get(path){
         return response.json()
     } catch (error) { 
         console.error(error)
-    }
+    }c
 };
 
 async function req(path, reqBody, method) {

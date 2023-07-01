@@ -67,6 +67,22 @@ post_create_btn.addEventListener('click', () => {
             })
 });
 
+update_btn.addEventListener("click", () => {
+    const titleNode = document.querySelector('#edit-post #title');
+    const bodyNode = document.querySelector("#edit-post #body");
+    const id = document.querySelector("#edit-post #id").value;
+    const title = titleNode.value;
+    const body = bodyNode.value;
+    const update = {title, body};
+    webApi.req(`posts/${id}`, update, 'PATCH')
+            .then(data => {
+                showAlert(data.message)
+                showPost(data.post.id);
+                titleNode.value = "";
+                bodyNode.value = "";
+            })
+});
+
 function showAll() {
     webApi.get('posts')
             .then( data => {
@@ -109,22 +125,6 @@ function editPost(id) {
                 document.querySelector('#edit-post #id').value = data.id;
             })
 };
-
-update_btn.addEventListener("click", () => {
-    const titleNode = document.querySelector('#edit-post #title');
-    const bodyNode = document.querySelector("#edit-post #body");
-    const id = document.querySelector("#edit-post #id").value;
-    const title = titleNode.value;
-    const body = bodyNode.value;
-    const update = {title, body};
-    webApi.req(`posts/${id}`, update, 'PATCH')
-            .then(data => {
-                showAlert(data.message)
-                showPost(data.post.id);
-                titleNode.value = "";
-                bodyNode.value = "";
-            })
-});
 
 function showAlert(message) {
     document.getElementById("alert-info").innerHTML = `
