@@ -24,18 +24,28 @@ code {
 }
 
 .nav-main {
-  display: flex;
   width: 100%;
   height: 5rem;
   background-image: url('../public/pictures/wood-2.jpg');
   background-position: center;
   background-size: cover;
-  justify-content: space-around;
-  align-items: center;
   background-color: transparent;
 }
 
-.nav-main a {
+.nav-second {
+  border: solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+
+}
+
+.nav-second::after {
+  
+}
+
+.nav-second a {
   display: flex;
   /* flex-grow: 1; */
   justify-content: center;
@@ -48,7 +58,7 @@ code {
   border-radius: 30px;
 }
 
-.nav-main a:hover {
+.nav-second a:hover {
   animation: navItem .5s forwards;
 }
 
