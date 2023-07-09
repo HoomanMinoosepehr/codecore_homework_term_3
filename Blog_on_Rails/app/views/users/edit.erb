@@ -1,0 +1,17 @@
+<div class='container mt-3', style='width: 30rem'>
+    <h1>Edit your info:</h1>
+    <%= form_for @user , url: user_path(@user), method: :patch do |f| %>
+        <div class='mt-4'>
+            <%= f.label :name, "Name:", class:'form-label' %>
+            <%= f.text_field :name, placeholder: 'Enter Your Name', class:'form-control' %>
+        </div>
+        <div class="mt-4">
+            <%= f.label :email, "Email:", class:'form-label' %>
+            <%= f.email_field :email, placeholder: "Enter Your Email", class:'form-control'%>
+        </div>
+        <div class='d-flex justify-content-between'>
+            <%= f.submit "Update", class:"btn btn-outline-primary mt-3" %>
+            <%= link_to "Change Password", user_editpass_path(@user) , class:'btn btn-outline-warning mt-3', method: :get %>
+        </div>   
+    <% end %>
+</div>

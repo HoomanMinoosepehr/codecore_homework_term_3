@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogOnRails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid justify-content-between">
+        <div class='d-flex'>
+          <%= link_to root_path , class:'navbar-brand text-primary' do %>
+            <h2>Blog On Rails</h2>
+          <% end %>
+        </div>
+        <div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <%= link_to("Home", root_path, class:"nav-link text-primary fs-4") %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to("New Post", new_post_path, class:"nav-link text-primary fs-4") %>
+                  </li>
+                <% if user_signed_in? %>
+                  <li class="nav-item m-2">
+                    <%= link_to  "Hi #{current_user.name.capitalize.truncate(15)}", edit_user_path(current_user), class:'nav-link text-warning text-decoration-none fs-4 p-0' %>
+                  </li>
+                  <li class='nav-item m-2'>
+                    <%= button_to "Log Out", session_path, class:'btn btn-danger', method: :delete %>
+                  </li>
+                <% else %>    
+                  <li class="nav-item">
+                    <%= link_to "Sign In" , session_new_path , class:"nav-link text-primary fs-4" %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "Sign Up" , new_user_path , class:"nav-link text-primary fs-4" %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+
+        </div>
+        </div>
+      </div>
+    </nav>
+    <div class='container d-flex justify-content-center mt-3 '>
+      <% flash.each do |key , value| %>
+        <div class="alert alert-<%=key%> alert-dismissble fade show w-30">
+          <%= value %>
+          <button type='button' class='btn-close' data-bs-dismiss='alert' ></button>
+        </div>
+      <% end %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

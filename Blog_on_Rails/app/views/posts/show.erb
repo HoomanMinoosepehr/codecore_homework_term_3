@@ -1,0 +1,35 @@
+<div class="container mt-4" style = "width: 30rem">
+    <div class='text-break'>
+        <h1><%= @post.title %></h1>
+        <p><%= @post.body %></p>
+        <small class= "text-body-tertiary"><%= "This post has been created #{time_ago_in_words(@post.created_at)} ago by #{@post.user.name}" %></small>
+    </div>
+    <% if can?(:destroy,@post) %>
+        <div class='d-flex mt-1'>
+            <%= button_to "Edit" , edit_post_path(@post) ,method: :get, class: 'btn btn-outline-primary m-1' %>
+            <%= button_to "Delete", @post, :method => :delete, Class: 'btn btn-outline-primary m-1' %>
+        </div>
+    <% end %>
+    <div class = 'mt-3' >
+        <%= form_for [@post, @comments] do |c| %>
+            <%= c.label :content, "Comment", class:'form-label fs-3' %>
+            <%= c.text_area :content, placeholder:'What`s on your mind?', class:'form-control' %>
+            <%= c.submit "Submit", class:'btn btn-outline-primary mt-3' %>
+        <% end %>
+    </div>
+    <% if @post.comments != [] %>
+        <div class = 'mt-4'>
+            <% @post.comments.order(created_at: :desc).each do |comment|%>
+                <div class="mt-2">
+                    <%= comment.content %><br>
+                    <div class = 'd-flex align-items-center text-body-tertiary'> 
+                        <%="Commented #{time_ago_in_words(comment.created_at)} ago by #{comment.user.name.truncate(15)} •"%>
+                        <% if can?(:destroy, comment) || can?(:destroy, @post) %>
+                            <%= button_to('Delete' , [@post , comment] , method: :delete, class: 'btn btn-link text-decoration-none') %>
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+</div>
