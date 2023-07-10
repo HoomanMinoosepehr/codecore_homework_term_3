@@ -1,0 +1,20 @@
+const baseUrl = 'http://127.0.0.1:3000/api/v1/';
+
+async function get(path) {
+    const response = await fetch(baseUrl + path)
+    return response.json()
+}
+
+async function req(path, body, method) {
+    const options = {
+        method: method || 'POST',
+        credentials: "include",
+        headers: {
+            "Content-type": "application/json",
+            'mode': 'cors'
+        },
+        body: JSON.stringify(body)
+    }
+    const response = await fetch(baseUrl + path, options);
+    return response.json()
+}

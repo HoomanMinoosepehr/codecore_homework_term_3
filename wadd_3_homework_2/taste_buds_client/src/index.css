@@ -45,7 +45,7 @@ code {
   left: 0;
   width: 100%;
   height: 50%;
-  background: linear-gradient(transparent, rgb(54, 53, 53));
+  background: linear-gradient(transparent, rgb(0, 0, 0));
 }
 
 .nav-second a {
@@ -92,10 +92,7 @@ code {
   left: 0;
   width: 100%;
   height: 10%;
-  background: linear-gradient(rgb(54, 53, 53), transparent);
-}
-
-.home-second {
+  background: linear-gradient(rgb(0, 0, 0), transparent);
 }
 
 .container {
