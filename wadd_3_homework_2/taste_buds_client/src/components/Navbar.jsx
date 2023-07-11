@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom';
 
 function Navbar() {
 
-
     return (
         <div className='nav-main'>
             <div className='nav-second'>
@@ -13,6 +12,7 @@ function Navbar() {
             </div>
         </div>
     )
+    
 };
 
 export default Navbar;

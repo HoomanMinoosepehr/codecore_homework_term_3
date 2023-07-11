@@ -1,14 +1,14 @@
 const baseUrl = 'http://127.0.0.1:3000/api/v1/';
 
 async function get(path) {
-    const response = await fetch(baseUrl + path)
+    const response = await fetch(baseUrl + path, { credentials: 'include'} )
     return response.json()
 }
 
 async function req(path, body, method) {
     const options = {
         method: method || 'POST',
-        credentials: "include",
+        credentials:'include',
         headers: {
             "Content-type": "application/json",
             'mode': 'cors'
@@ -17,4 +17,14 @@ async function req(path, body, method) {
     }
     const response = await fetch(baseUrl + path, options);
     return response.json()
+}
+
+const webApi = { get, req };
+
+export const User = {
+
+    create(body) {
+        return webApi.req('users', body)
+    }
+    
 }
