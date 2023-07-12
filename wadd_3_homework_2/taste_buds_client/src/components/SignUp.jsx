@@ -4,19 +4,20 @@ import { FloatingInput } from "./FloatingInput";
 
 
 export function SignUp(props) {
-    const [info, setInfo] = useState({})
+    const [user, setUser] = useState({})
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setInfo({
-            ...info,
+        setUser({
+            ...user,
             [name]: value
         });
-        console.log(info)
+        console.log(user)
     }
 
     const signUp = () => {
-        User.create(info)
+        console.log("user: ", user)
+        User.create(user)
                 .then(data => {
                     console.log(data)
                 })

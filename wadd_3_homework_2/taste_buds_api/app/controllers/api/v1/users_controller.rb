@@ -1,11 +1,16 @@
 class Api::V1::UsersController < ApplicationController
 
     def create
-        user = User.new user_params
-        if user.save
-            render json: { user: user, status: :ok }
+        @user = User.new user_params
+        p 'zzzzzz',user_params
+        p "user: ", @user
+        p "params[password]: ", params[:password]
+        @user.password = params[:password]
+        @user.password_confirmation = params[:password_confirmation]
+        if @user.save
+            render json: { user: @user, status: :ok }
         else
-            render json: { message: user.errors.messages, status: 422}
+            render json: { message: @user.errors.messages, status: 422}
         end
     end
 

@@ -10,7 +10,7 @@ async function req(path, body, method) {
         method: method || 'POST',
         credentials:'include',
         headers: {
-            "Content-type": "application/json",
+            "Content-Type": "application/json",
             'mode': 'cors'
         },
         body: JSON.stringify(body)

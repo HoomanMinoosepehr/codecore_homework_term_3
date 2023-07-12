@@ -208,3 +208,640 @@ Processing by Api::V1::UsersController#create as JSON
 Completed 200 OK in 49ms (Views: 0.3ms | ActiveRecord: 8.7ms | Allocations: 22835)
 
 
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 18:38:15 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2709)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 18:43:01 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `create'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 5.3ms | Allocations: 4815)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 18:43:34 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2393)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 18:50:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `create'
+Completed 200 OK in 33ms (Views: 0.2ms | ActiveRecord: 5.6ms | Allocations: 42074)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 18:51:28 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6:in `create'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 4.6ms | Allocations: 4853)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 18:55:26 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com"}}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 4.9ms | Allocations: 3914)
+
+
+  
+NameError (undefined local variable or method `password' for #<Api::V1::UsersController:0x0000000000efb0>):
+  
+app/controllers/api/v1/users_controller.rb:7:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 18:55:59 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 7.4ms | Allocations: 4913)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 19:00:13 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2507)
+
+
+Started POST "/api/v1/user" for 127.0.0.1 at 2023-07-10 19:04:35 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/user"):
+  
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 19:04:42 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"hooman", "last_name"=>"minoo", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "fortmat"=>:json}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Create (9.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "hooman"], ["last_name", "minoo"], ["email", "hooman@minoo.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-07-11 02:04:42.295458"], ["updated_at", "2023-07-11 02:04:42.295458"]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 256ms (Views: 0.8ms | ActiveRecord: 12.5ms | Allocations: 3339)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 19:07:24 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 2675)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 19:13:20 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"bando", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"bando", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 70ms (Views: 0.2ms | ActiveRecord: 7.1ms | Allocations: 5452)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 19:18:39 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"bando", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"bando", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 8.4ms | Allocations: 4944)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 19:29:14 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"bando", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"bando", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 10.3ms | Allocations: 5389)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 19:29:37 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 2483)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 19:42:31 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 12.2ms | Allocations: 5279)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 19:52:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 5.8ms | Allocations: 42135)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 20:01:26 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 6.4ms | Allocations: 42135)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 20:02:57 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 2564)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 20:05:47 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com"}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 4.7ms | Allocations: 4266)
+
+
+  
+NoMethodError (undefined method `passsword=' for #<User id: nil, first_name: "Hooman", last_name: "Minoospehr", email: "hooman@minoo.com", password_digest: nil, created_at: nil, updated_at: nil>
+Did you mean?  password=
+               password):
+  
+app/controllers/api/v1/users_controller.rb:8:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 20:07:19 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Hooman"], ["last_name", "Minoospehr"], ["email", "hooman@minoo.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-07-11 03:07:19.567150"], ["updated_at", "2023-07-11 03:07:19.567150"]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+Completed 200 OK in 242ms (Views: 0.6ms | ActiveRecord: 9.4ms | Allocations: 5675)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 20:09:58 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"asddsa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"asddsa"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+Completed 200 OK in 253ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 3331)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 20:13:23 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"asddsa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com", "fortmat"=>:json, "user"=>{"first_name"=>"asddsa", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+Completed 200 OK in 253ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 2793)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 23:06:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"Hooman", "last_name"=>"Minoospehr", "email"=>"hooman@minoo.com"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Hooman"], ["last_name", "Minoospehr"], ["email", "hooman@minoo.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-07-11 06:06:42.724170"], ["updated_at", "2023-07-11 06:06:42.724170"]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+Completed 200 OK in 266ms (Views: 0.4ms | ActiveRecord: 19.8ms | Allocations: 41633)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2023-07-10 23:07:20 -0700
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"first_name"=>"ayaka", "last_name"=>"bando", "email"=>"ayaka@bando.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "fortmat"=>:json, "user"=>{"first_name"=>"ayaka", "last_name"=>"bando", "email"=>"ayaka@bando.com"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ayaka@bando.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "ayaka"], ["last_name", "bando"], ["email", "ayaka@bando.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-07-11 06:07:20.681558"], ["updated_at", "2023-07-11 06:07:20.681558"]]
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10:in `create'
+Completed 200 OK in 246ms (Views: 0.4ms | ActiveRecord: 10.9ms | Allocations: 2910)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:03:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/sessions"):
+  
+Started GET "/" for ::1 at 2023-07-11 18:04:47 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/3.0.0/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/3.0.0/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.1ms | Allocations: 826)
+Completed 200 OK in 15ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 7596)
+
+
+Started GET "/sdasd" for ::1 at 2023-07-11 18:04:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sdasd"):
+  
+Started GET "/favicon.ico" for ::1 at 2023-07-11 18:04:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/rails/info/routes?path=sessions" for ::1 at 2023-07-11 18:04:54 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"sessions"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1783)
+
+
+Started POST "/api/v1/session" for 127.0.0.1 at 2023-07-11 18:05:34 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/session"):
+  
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:05:40 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fc370b2c718>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.5ms | Allocations: 3629)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:06:54 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fc35c0777a0>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 308)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started GET "/sdasd" for 127.0.0.1 at 2023-07-11 18:09:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sdasd"):
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-07-11 18:09:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/rails/info/routes?path=sessions" for 127.0.0.1 at 2023-07-11 18:09:21 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"sessions"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:09:52 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fc360ae1b38>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 285)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:11:14 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms | Allocations: 5036)
+
+
+  
+NoMethodError (undefined method `find_by_emailparams' for User:Class
+Did you mean?  find_by_sql):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:12:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f0d84b802c0>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.7ms | Allocations: 23919)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:12:49 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f0d848e84e0>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 327)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:12:57 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f0d94edbc70>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 285)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:17:48 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f0d94284f80>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.1ms | Allocations: 2461)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:18:26 -0700
+  
+SyntaxError (/home/hooman/web_dev/codecore_homework_term_3/wadd_3_homework_2/taste_buds_api/app/controllers/api/v1/sessions_controller.rb:6: syntax error, unexpected instance variable, expecting `end'
+        p '=========='@user
+                      ^~~~~
+):
+  
+app/controllers/api/v1/sessions_controller.rb:6: syntax error, unexpected instance variable, expecting `end'
+app/controllers/api/v1/sessions_controller.rb:6: syntax error, unexpected instance variable, expecting `end'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:18:48 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f0d84d0a8e8>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.9ms | Allocations: 2453)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:19:29 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameters: :user, :fortmat, :format, :session. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f0d94700280>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.2ms | Allocations: 2439)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:20:26 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 3009)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:20:53 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 2824)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:21:09 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 688)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:21:14 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 689)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:21:19 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 671)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:22:51 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 2.0ms | Allocations: 2807)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:23:23 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 2806)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:24:12 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f0d7427de08>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2959)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:24:41 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+[31mUnpermitted parameter: :email. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f0d84fec598>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 2956)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:25:14 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f0d802baef0>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.6ms | Allocations: 2447)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:26:44 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+
+    "user": {
+        "email": "hooman@minoo.com",
+        "password": "12345678"
+    }
+
+Processing by Api::V1::SessionsController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 141)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:27:10 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007f0d7c044c38>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 275)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:28:44 -0700
+  
+SyntaxError (/home/hooman/web_dev/codecore_homework_term_3/wadd_3_homework_2/taste_buds_api/app/controllers/api/v1/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/api/v1/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/sessions_controller.rb:24: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:29:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fe1ecb90430>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 3.4ms | Allocations: 23918)
+
+
+  
+ActiveRecord::StatementInvalid (can't cast ActionController::Parameters):
+  
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:32:07 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+[31mUnpermitted parameter: :email. Context: { controller: Api::V1::SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fe1fce2ccb0>, params: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "format"=>:json, "controller"=>"api/v1/sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}} }[0m
+Completed 200 OK in 269ms (Views: 0.8ms | ActiveRecord: 6.8ms | Allocations: 19335)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:32:41 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 269ms (Views: 0.4ms | ActiveRecord: 7.1ms | Allocations: 4569)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 18:32:50 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 251ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 907)
+
+

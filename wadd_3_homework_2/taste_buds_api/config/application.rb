@@ -42,10 +42,14 @@ module TasteBudsApi
     Rails.application.config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins 'http://127.0.0.1:8081'
-        resource '/api/v1/*',
-        headers: :any,
-        methods: [:get, :post, :patch, :put],
-        credentials: true
+        
+        resource(
+          "/api/*", 
+          headers: :any,
+          methods: [:get, :post, :put, :patch, :delete, :options],
+          credentials: true,
+          expose: ['Access-Control-Allow-Origin']
+        )
       end
     end
     
