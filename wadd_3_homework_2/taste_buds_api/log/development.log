@@ -845,3 +845,127 @@ Processing by Api::V1::SessionsController#create as JSON
 Completed 200 OK in 251ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 907)
 
 
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:03:31 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "fortmat"=>:json, "session"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 3ms (Allocations: 1211)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/sessions_controller.rb:22:in `sign_params'
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:03:52 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "fortmat"=>:json, "session"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 0ms (Allocations: 160)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/sessions_controller.rb:22:in `sign_params'
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:06:15 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "fortmat"=>:json, "session"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 10ms (Allocations: 144)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/sessions_controller.rb:22:in `sign_params'
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:06:47 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "fortmat"=>:json, "session"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 1ms (Allocations: 144)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/sessions_controller.rb:22:in `sign_params'
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:09:36 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "fortmat"=>:json, "session"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 1ms (Allocations: 144)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/sessions_controller.rb:22:in `sign_params'
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:12:01 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "fortmat"=>:json, "session"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 11ms (ActiveRecord: 0.0ms | Allocations: 21622)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/sessions_controller.rb:22:in `sign_params'
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started GET "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:12:44 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/sessions"):
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-07-11 19:12:44 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/rails/info/routes?path=session" for 127.0.0.1 at 2023-07-11 19:12:56 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"session"}
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 4403)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:13:28 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "fortmat"=>:json, "session"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 177)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/sessions_controller.rb:22:in `sign_params'
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:14:10 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"hooman@minoo.com", "password"=>"[FILTERED]", "fortmat"=>:json, "session"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 314ms (Views: 0.7ms | ActiveRecord: 5.4ms | Allocations: 20319)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:17:10 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 843)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:17:34 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 685)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-11 19:18:09 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "fortmat"=>:json, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 235ms (Views: 0.7ms | ActiveRecord: 11.2ms | Allocations: 4719)
+
+

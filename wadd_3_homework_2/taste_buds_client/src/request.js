@@ -28,3 +28,9 @@ export const User = {
     }
     
 }
+
+export const Sessions = {
+    create(body) {
+        return webApi.req('sessions', body)
+    }
+}
