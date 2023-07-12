@@ -32,5 +32,8 @@ export const User = {
 export const Sessions = {
     create(body) {
         return webApi.req('sessions', body)
+    },
+    destroy(){
+        return webApi.req("sessions", {}, "DELETE")
     }
 }

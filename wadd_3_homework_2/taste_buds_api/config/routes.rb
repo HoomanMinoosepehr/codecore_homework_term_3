@@ -6,8 +6,11 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { fortmat: :json } do
     namespace :v1, defaults: { format: :json } do
-      resources :users, only: [:create]
+      resources :users, only: [:create] do
+        get :current, on: :collection
+      end
       resources :sessions, only: [:create, :destroy]
+
     end
   end
 

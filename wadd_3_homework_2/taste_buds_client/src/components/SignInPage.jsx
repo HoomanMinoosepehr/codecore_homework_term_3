@@ -23,6 +23,7 @@ function SignInPage(props) {
                     .then(data => {
                         if(data.status === 200){
                             setUser({ email: '', password: ''})
+                            props.onSignIn()
                             console.log(data)
                             navigate("/")
                         }
