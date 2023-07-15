@@ -15,6 +15,7 @@ function SignInPage(props) {
             ...user,
             [name]: value
         })
+        console.log(user)
     };
 
     const signIn = () => {
