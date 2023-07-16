@@ -9,8 +9,8 @@ Rails.application.routes.draw do
       resources :users, only: [:create] do
         get :current, on: :collection
       end
-      resources :sessions, only: [:create, :destroy]
-
+      resources :sessions, only: [:create]
+      delete 'sessions' => 'sessions#destroy'
     end
   end
 

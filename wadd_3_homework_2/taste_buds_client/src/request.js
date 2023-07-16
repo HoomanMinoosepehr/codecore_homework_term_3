@@ -25,6 +25,10 @@ export const User = {
 
     create(body) {
         return webApi.req('users', body)
+    },
+
+    current() {
+        return webApi.get('users/current')
     }
     
 }

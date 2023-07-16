@@ -7,9 +7,17 @@ function Navbar(props) {
             <div className='nav-second'>
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/recipes'}>Recipes</NavLink>
-                <NavLink to={'/sign-in'}>Sign In</NavLink>
-                <NavLink to={'/sign-up'}>Sign Up</NavLink>
-                <button className='btn btn-danger' onClick={props.onSignOut}>Sign Out</button>
+                { props.user ? 
+                    <div className='d-flex align-items-center'>
+                        <p className='m-3'>Hello, {props.user}</p>
+                        <button className='btn btn-danger m-3' onClick={props.onSignOut}>Sign Out</button>
+                    </div>
+                    :
+                    <>
+                        <NavLink to={'/sign-in'}>Sign In</NavLink>
+                        <NavLink to={'/sign-up'}>Sign Up</NavLink>
+                    </>
+                }
             </div>
         </div>
     )
