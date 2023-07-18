@@ -6,6 +6,8 @@ import SignInPage from "./components/SignInPage";
 import { Sessions, User } from "./request";
 import { useState } from "react";
 import { RecipeIndex } from "./components/RecipeIndex";
+import { AuthRoute } from "./components/AuthRoute";
+import { RecipeNewPage } from "./components/RecipeNewPage";
 
 function App() {
   const [ user, setUser] = useState(null);
@@ -31,6 +33,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/recipes" element={<RecipeIndex/>}/>
+        <Route exact path="/recipes/new" element={<AuthRoute isAuth={!!user} page={<RecipeNewPage/>}/>}/>
         <Route exact path="/sign-up" element={<SignUp/>}/>
         <Route exact path="/sign-in" element={<SignInPage onSignIn={getCurrentUser}/>}/>
       </Routes>

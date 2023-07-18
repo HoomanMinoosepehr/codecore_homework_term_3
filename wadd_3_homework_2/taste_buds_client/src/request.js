@@ -43,7 +43,13 @@ export const Sessions = {
 };
 
 export const Recipe = {
+
     index() {
         return webApi.get('recipes')
-    }
+    },
+
+    create(body) {
+        return webApi.req('recipes', body)
+    },
+
 }

@@ -7,6 +7,7 @@ function Navbar(props) {
             <div className='nav-second'>
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/recipes'}>Recipes</NavLink>
+                <NavLink to={'/recipes/new'}>New Recipe</NavLink>
                 { props.user ? 
                     <div className='d-flex align-items-center'>
                         <p className='m-3'>Hello, {props.user}</p>
