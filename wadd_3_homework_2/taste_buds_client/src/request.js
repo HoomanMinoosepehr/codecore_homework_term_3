@@ -31,7 +31,7 @@ export const User = {
         return webApi.get('users/current')
     }
     
-}
+};
 
 export const Sessions = {
     create(body) {
@@ -39,5 +39,11 @@ export const Sessions = {
     },
     destroy(){
         return webApi.req("sessions", {}, "DELETE")
+    }
+};
+
+export const Recipe = {
+    index() {
+        return webApi.get('recipes')
     }
 }
