@@ -2,9 +2,6 @@ class Api::V1::UsersController < ApplicationController
 
     def create
         @user = User.new user_params
-        p 'zzzzzz',user_params
-        p "user: ", @user
-        p "params[password]: ", params[:password]
         @user.password = params[:password]
         @user.password_confirmation = params[:password_confirmation]
         if @user.save
@@ -26,7 +23,7 @@ class Api::V1::UsersController < ApplicationController
             :last_name,
             :email,
             :password,
-            :password_confirmation
+            :password_confirmation 
         )
     end
 

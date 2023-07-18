@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       end
       resources :sessions, only: [:create]
       delete 'sessions' => 'sessions#destroy'
+      resources :recipes, only: [:create, :destroy, :index, :show] do
+        resources :reviews, only: [:create, :destroy]
+      end
     end
   end
 

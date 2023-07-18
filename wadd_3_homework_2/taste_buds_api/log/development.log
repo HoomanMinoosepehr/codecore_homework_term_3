@@ -1181,3 +1181,899 @@ Processing by Api::V1::UsersController#current as JSON
 Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 805)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4774974827035964670)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20230716201253)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (50.1ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" bigserial primary key, "title" character varying, "story" text, "description" text, "people_number" integer, "spicy" boolean, "salty" boolean, "sweet" boolean, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_9606fce865"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE INDEX "index_recipes_on_user_id" ON "recipes" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230716201253"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4774974827035964670)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4774974827035964670)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReviews (20230716225553)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.0ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "rating" integer, "body" text, "user_id" bigint NOT NULL, "recipe_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_a47e2057ed"
+FOREIGN KEY ("recipe_id")
+  REFERENCES "recipes" ("id")
+)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id")[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_recipe_id" ON "reviews" ("recipe_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230716225553"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(4774974827035964670)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/sado" for 127.0.0.1 at 2023-07-16 17:06:05 -0700
+Started GET "/rails/info/routes?path=sessions" for 127.0.0.1 at 2023-07-16 17:06:05 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/sado"):
+  
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"sessions"}
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1873)
+
+
+Started GET "/rails/info/routes?path=rec" for 127.0.0.1 at 2023-07-16 17:06:06 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"rec"}
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 869)
+
+
+Started GET "/rails/info/routes?path=reciep" for 127.0.0.1 at 2023-07-16 17:06:07 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"reciep"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 719)
+
+
+Started GET "/rails/info/routes?path=recipe" for 127.0.0.1 at 2023-07-16 17:06:09 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"recipe"}
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 800)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Started GET "/api/v1/users/current" for 127.0.0.1 at 2023-07-16 19:12:59 -0700
+  
+ArgumentError (Unknown validator: 'PrecenseValidator'):
+  
+app/models/user.rb:8:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-16 19:15:35 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 4ms (Allocations: 2505)
+
+
+  
+ArgumentError (Unknown validator: 'PrecenseValidator'):
+  
+app/models/user.rb:8:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Started GET "/api/v1/users/current" for 127.0.0.1 at 2023-07-16 19:16:59 -0700
+Processing by Api::V1::UsersController#current as JSON
+  Parameters: {"bid"=>{"price"=>"111"}, "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 17.0ms | Allocations: 3302)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-16 19:17:10 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 244ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 1591)
+
+
+Started GET "/api/v1/users/current" for 127.0.0.1 at 2023-07-16 19:17:14 -0700
+Processing by Api::V1::UsersController#current as JSON
+  Parameters: {"bid"=>{"price"=>"111"}, "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 802)
+
+
+Started DELETE "/api/v1/sessions" for 127.0.0.1 at 2023-07-16 19:17:19 -0700
+Processing by Api::V1::SessionsController#destroy as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 262)
+
+
+Started GET "/api/v1/users/current" for 127.0.0.1 at 2023-07-16 19:17:25 -0700
+Processing by Api::V1::UsersController#current as JSON
+  Parameters: {"bid"=>{"price"=>"111"}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 252)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-16 19:17:29 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 237ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 909)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-16 19:17:46 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"hooman@minoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hooman@minoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+Completed 200 OK in 231ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 909)
+
+
+Started GET "/api/v1/users/current" for 127.0.0.1 at 2023-07-16 19:17:53 -0700
+Processing by Api::V1::UsersController#current as JSON
+  Parameters: {"bid"=>{"price"=>"111"}, "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 807)
+
+
+Started GET "/api/v1/recipe" for 127.0.0.1 at 2023-07-16 19:23:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/recipe"):
+  
+Started POST "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:23:19 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/recipes"):
+  
+Started POST "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:23:55 -0700
+Processing by Api::V1::RecipesController#create as JSON
+  Parameters: {"recipe"=>{"title"=>"first recipe", "description"=>"this is from postman"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `create'
+  [1m[36mRecipe Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" WHERE "recipes"."title" = $1 AND "recipes"."user_id" = $2 LIMIT $3[0m  [["title", "first recipe"], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `create'
+  [1m[36mRecipe Create (1.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "story", "description", "people_number", "spicy", "salty", "sweet", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "first recipe"], ["story", nil], ["description", "this is from postman"], ["people_number", nil], ["spicy", nil], ["salty", "[FILTERED]"], ["sweet", nil], ["user_id", 4], ["created_at", "2023-07-17 02:23:55.552737"], ["updated_at", "2023-07-17 02:23:55.552737"]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:6:in `create'
+Completed 200 OK in 72ms (Views: 0.3ms | ActiveRecord: 18.4ms | Allocations: 32828)
+
+
+Started GET "/sado" for 127.0.0.1 at 2023-07-16 19:24:57 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sado"):
+  
+Started GET "/rails/info/routes?path=review" for 127.0.0.1 at 2023-07-16 19:25:00 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"review"}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 1837)
+
+
+Started POST "/api/v1/recipes/1/reviews" for 127.0.0.1 at 2023-07-16 19:33:17 -0700
+  
+ArgumentError (Unknown validator: 'GreaterThanOrEqualToValidator'):
+  
+app/models/review.rb:7:in `<class:Review>'
+app/models/review.rb:1:in `<main>'
+Started POST "/api/v1/recipes/1/reviews" for 127.0.0.1 at 2023-07-16 19:34:34 -0700
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"review"=>{"body"=>"delicious food", "rating"=>"7"}, "recipe_id"=>"1"}
+Completed 500 Internal Server Error in 2ms (Allocations: 978)
+
+
+  
+NoMethodError (undefined method `pemit' for #<ActionController::Parameters {"body"=>"delicious food", "rating"=>"7"} permitted: false>
+Did you mean?  permit
+               permit!):
+  
+app/controllers/api/v1/reviews_controller.rb:32:in `review_params'
+app/controllers/api/v1/reviews_controller.rb:5:in `create'
+Started POST "/api/v1/recipes/1/reviews" for 127.0.0.1 at 2023-07-16 19:35:07 -0700
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"review"=>{"body"=>"delicious food", "rating"=>"7"}, "recipe_id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mRecipe Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" WHERE "recipes"."title" = $1 AND "recipes"."id" != $2 AND "recipes"."user_id" = $3 LIMIT $4[0m  [["title", "first recipe"], ["id", 1], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+Completed 200 OK in 104ms (Views: 0.5ms | ActiveRecord: 18.7ms | Allocations: 35451)
+
+
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+Started POST "/api/v1/recipes/1/reviews" for 127.0.0.1 at 2023-07-16 19:36:56 -0700
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"review"=>{"body"=>"delicious food", "rating"=>"7"}, "recipe_id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:6:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mReview Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 11.6ms | Allocations: 18815)
+
+
+  
+NoMethodError (undefined method `message' for #<ActiveModel::Errors [#<ActiveModel::Error attribute=rating, type=less_than_or_equal_to, options={:value=>7, :count=>5}>]>
+Did you mean?  messages):
+  
+app/controllers/api/v1/reviews_controller.rb:13:in `create'
+Started POST "/api/v1/recipes/1/reviews" for 127.0.0.1 at 2023-07-16 19:37:15 -0700
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"review"=>{"body"=>"delicious food", "rating"=>"7"}, "recipe_id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:6:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mReview Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 10.2ms | Allocations: 18444)
+
+
+Started POST "/api/v1/recipes/1/reviews" for 127.0.0.1 at 2023-07-16 19:37:43 -0700
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"review"=>{"body"=>"delicious food", "rating"=>"5"}, "recipe_id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:6:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mReview Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mReview Create (1.0ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "body", "user_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 5], ["body", "delicious food"], ["user_id", 4], ["recipe_id", 1], ["created_at", "2023-07-17 02:37:43.929471"], ["updated_at", "2023-07-17 02:37:43.929471"]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 8.5ms | Allocations: 3890)
+
+
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:38:39 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/recipes"):
+  
+Started GET "/rails/info/routes?path=recipe" for 127.0.0.1 at 2023-07-16 19:39:09 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"recipe"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1927)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:40:34 -0700
+Processing by Api::V1::RecipesController#index as JSON
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 2.0ms | Allocations: 7366)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:45:01 -0700
+Processing by Api::V1::RecipesController#index as JSON
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 5103)
+
+
+  
+NameError (uninitialized constant Api::V1::RecipesController::RecipeSerializer):
+  
+app/controllers/api/v1/recipes_controller.rb:5:in `index'
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:46:28 -0700
+Processing by Api::V1::RecipesController#index as JSON
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1815)
+
+
+  
+NameError (uninitialized constant Api::V1::RecipesController::RecipeSerializer):
+  
+app/controllers/api/v1/recipes_controller.rb:5:in `index'
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:49:16 -0700
+Processing by Api::V1::RecipesController#index as JSON
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1799)
+
+
+  
+NameError (uninitialized constant Api::V1::RecipesController::RecipeSerializer):
+  
+app/controllers/api/v1/recipes_controller.rb:5:in `index'
+Started GET "/sado" for 127.0.0.1 at 2023-07-16 19:49:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/sado"):
+  
+Started GET "/rails/info/routes?path=recipes" for 127.0.0.1 at 2023-07-16 19:49:35 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"recipes"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2026)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:50:42 -0700
+Processing by Api::V1::RecipesController#index as JSON
+Completed 500 Internal Server Error in 3ms (Allocations: 1800)
+
+
+  
+NameError (uninitialized constant Api::V1::RecipesController::RecipeSerializer):
+  
+app/controllers/api/v1/recipes_controller.rb:5:in `index'
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:52:45 -0700
+Processing by Api::V1::RecipesController#index as JSON
+Completed 500 Internal Server Error in 6ms (Allocations: 5085)
+
+
+  
+NameError (uninitialized constant Api::V1::RecipesController::RecipeSerializer):
+  
+app/controllers/api/v1/recipes_controller.rb:5:in `index'
+Started GET "/controllers/api/v1/recipes_controller.rb:5:in" for 127.0.0.1 at 2023-07-16 19:52:55 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/controllers/api/v1/recipes_controller.rb:5:in"):
+  
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:55:02 -0700
+Processing by Api::V1::RecipesController#index as JSON
+Completed 204 No Content in 15ms (Allocations: 3295)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:55:16 -0700
+Processing by Api::V1::RecipesController#index as JSON
+Completed 204 No Content in 0ms (Allocations: 54)
+
+
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+Started GET "/api/v1/recipe" for 127.0.0.1 at 2023-07-16 19:55:43 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/recipe"):
+  
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:55:48 -0700
+Processing by Api::V1::RecipesController#index as JSON
+Completed 204 No Content in 0ms (Allocations: 38)
+
+
+Started GET "/api/v1/users/current" for 127.0.0.1 at 2023-07-16 19:55:56 -0700
+Processing by Api::V1::UsersController#current as JSON
+  Parameters: {"bid"=>{"price"=>"111"}, "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 6.6ms | Allocations: 3287)
+
+
+Started GET "/api/v1/users/current" for 127.0.0.1 at 2023-07-16 19:56:04 -0700
+Processing by Api::V1::UsersController#current as JSON
+  Parameters: {"bid"=>{"price"=>"111"}, "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 808)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:56:12 -0700
+Processing by Api::V1::RecipesController#index as JSON
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 44)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:56:32 -0700
+Processing by Api::V1::RecipesController#index as JSON
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 5.1ms | ActiveRecord: 3.9ms | Allocations: 7468)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 19:57:44 -0700
+Processing by Api::V1::RecipesController#index as JSON
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 5075)
+
+
+  
+NameError (uninitialized constant Api::V1::RecipesController::RecipeSerializer):
+  
+app/controllers/api/v1/recipes_controller.rb:5:in `index'
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 20:04:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 100ms (Views: 56.0ms | ActiveRecord: 6.5ms | Allocations: 66781)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 20:04:53 -0700
+Processing by Api::V1::RecipesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.47ms)
+Completed 200 OK in 64ms (Views: 25.3ms | ActiveRecord: 11.0ms | Allocations: 20825)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 20:07:06 -0700
+Processing by Api::V1::RecipesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.27ms)
+Completed 200 OK in 21ms (Views: 12.6ms | ActiveRecord: 4.5ms | Allocations: 15637)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 20:09:39 -0700
+Processing by Api::V1::RecipesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.9ms)
+Completed 200 OK in 21ms (Views: 12.1ms | ActiveRecord: 3.9ms | Allocations: 15510)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 20:10:33 -0700
+Processing by Api::V1::RecipesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.33ms)
+Completed 200 OK in 29ms (Views: 14.9ms | ActiveRecord: 7.1ms | Allocations: 15540)
+
+
+Started GET "/api/v1/recipes" for 127.0.0.1 at 2023-07-16 20:10:55 -0700
+Processing by Api::V1::RecipesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:5:in `index'
+[active_model_serializers] No serializer found for resource: #<Review id: 1, rating: 5, body: "delicious food", user_id: 4, recipe_id: 1, created_at: "2023-07-17 02:37:43.929471000 +0000", updated_at: "2023-07-17 02:37:43.929471000 +0000">
+[active_model_serializers] No serializer found for resource: #<Review id: 1, rating: 5, body: "delicious food", user_id: 4, recipe_id: 1, created_at: "2023-07-17 02:37:43.929471000 +0000", updated_at: "2023-07-17 02:37:43.929471000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.92ms)
+Completed 200 OK in 58ms (Views: 34.6ms | ActiveRecord: 10.6ms | Allocations: 38172)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 20:28:39 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 5.9ms | Allocations: 10377)
+
+
+  
+NameError (uninitialized constant RecipeShowSerializer::RecipeShowReviewUserSerializer):
+  
+app/serializers/recipe_show_serializer.rb:4:in `<class:RecipeShowSerializer>'
+app/serializers/recipe_show_serializer.rb:1:in `<main>'
+app/controllers/api/v1/recipes_controller.rb:10:in `show'
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 20:29:03 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 7.7ms | Allocations: 44916)
+
+
+  
+NameError (uninitialized constant RecipeShowSerializer::RecipeShowReviewUserSerializer):
+  
+app/serializers/recipe_show_serializer.rb:4:in `<class:RecipeShowSerializer>'
+app/serializers/recipe_show_serializer.rb:1:in `<main>'
+app/controllers/api/v1/recipes_controller.rb:10:in `show'
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 20:29:31 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 200 OK in 49ms (Views: 23.0ms | ActiveRecord: 10.9ms | Allocations: 28623)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 20:29:51 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] No serializer found for resource: #<Review id: 1, rating: 5, body: "delicious food", user_id: 4, recipe_id: 1, created_at: "2023-07-17 02:37:43.929471000 +0000", updated_at: "2023-07-17 02:37:43.929471000 +0000">
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (40.95ms)
+Completed 200 OK in 82ms (Views: 46.9ms | ActiveRecord: 16.5ms | Allocations: 39674)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 20:30:06 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 5.6ms | Allocations: 7594)
+
+
+  
+NameError (uninitialized constant RecipeShowSerializer::RecipeShowReviewUserSerializer):
+  
+app/serializers/recipe_show_serializer.rb:4:in `<class:RecipeShowSerializer>'
+app/serializers/recipe_show_serializer.rb:1:in `<main>'
+app/controllers/api/v1/recipes_controller.rb:10:in `show'
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 20:30:26 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 6.2ms | Allocations: 7626)
+
+
+  
+NameError (uninitialized constant RecipeShowSerializer::RecipeShowReviewUserSerializer):
+  
+app/serializers/recipe_show_serializer.rb:4:in `<class:RecipeShowSerializer>'
+app/serializers/recipe_show_serializer.rb:1:in `<main>'
+app/controllers/api/v1/recipes_controller.rb:10:in `show'
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 20:31:48 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] No serializer found for resource: #<Review id: 1, rating: 5, body: "delicious food", user_id: 4, recipe_id: 1, created_at: "2023-07-17 02:37:43.929471000 +0000", updated_at: "2023-07-17 02:37:43.929471000 +0000">
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (18.02ms)
+Completed 200 OK in 62ms (Views: 26.6ms | ActiveRecord: 15.8ms | Allocations: 21285)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 20:40:10 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 5.4ms | Allocations: 10438)
+
+
+  
+NameError (uninitialized constant RecipeShowSerializer::Active):
+  
+app/serializers/recipe_show_serializer.rb:5:in `<class:RecipeShowSerializer>'
+app/serializers/recipe_show_serializer.rb:1:in `<main>'
+app/controllers/api/v1/recipes_controller.rb:10:in `show'
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 20:40:20 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] No serializer found for resource: #<Review id: 1, rating: 5, body: "delicious food", user_id: 4, recipe_id: 1, created_at: "2023-07-17 02:37:43.929471000 +0000", updated_at: "2023-07-17 02:37:43.929471000 +0000">
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (19.26ms)
+Completed 200 OK in 71ms (Views: 29.2ms | ActiveRecord: 22.6ms | Allocations: 21109)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:08:24 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] No serializer found for resource: #<Review id: 1, rating: 5, body: "delicious food", user_id: 4, recipe_id: 1, created_at: "2023-07-17 02:37:43.929471000 +0000", updated_at: "2023-07-17 02:37:43.929471000 +0000">
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (11.16ms)
+Completed 200 OK in 57ms (Views: 21.7ms | ActiveRecord: 11.6ms | Allocations: 23325)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:08:38 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] No serializer found for resource: #<Review id: 1, rating: 5, body: "delicious food", user_id: 4, recipe_id: 1, created_at: "2023-07-17 02:37:43.929471000 +0000", updated_at: "2023-07-17 02:37:43.929471000 +0000">
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (18.48ms)
+Completed 200 OK in 57ms (Views: 27.5ms | ActiveRecord: 17.2ms | Allocations: 21289)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:09:47 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (20.16ms)
+Completed 200 OK in 63ms (Views: 28.1ms | ActiveRecord: 17.0ms | Allocations: 20884)
+
+
+Started POST "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:11:16 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/recipes/1"):
+  
+Started POST "/api/v1/recipes/1/reviews" for 127.0.0.1 at 2023-07-16 21:11:44 -0700
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"review"=>{"body"=>"niiiiiice food", "rating"=>"4"}, "recipe_id"=>"1"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:6:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mReview Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 200 OK in 32ms (Views: 11.0ms | ActiveRecord: 2.7ms | Allocations: 6310)
+
+
+Started POST "/api/v1/recipes/1/reviews" for 127.0.0.1 at 2023-07-16 21:14:11 -0700
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"review"=>{"body"=>"niiiiiice food", "rating"=>"4"}, "recipe_id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:6:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mReview Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 52ms (Views: 1.2ms | ActiveRecord: 17.8ms | Allocations: 18394)
+
+
+Started DELETE "/api/v1/sessions" for 127.0.0.1 at 2023-07-16 21:15:01 -0700
+Processing by Api::V1::SessionsController#destroy as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 591)
+
+
+Started GET "/api/v1/users/current" for 127.0.0.1 at 2023-07-16 21:15:04 -0700
+Processing by Api::V1::UsersController#current as JSON
+  Parameters: {"bid"=>{"price"=>"111"}, "user"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.21ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started POST "/api/v1/sessions" for 127.0.0.1 at 2023-07-16 21:15:18 -0700
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"ayaka@bando.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ayaka@bando.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ayaka@bando.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 228ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 2096)
+
+
+Started GET "/api/v1/users/current" for 127.0.0.1 at 2023-07-16 21:15:23 -0700
+Processing by Api::V1::UsersController#current as JSON
+  Parameters: {"bid"=>{"price"=>"111"}, "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.36ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1110)
+
+
+Started POST "/api/v1/recipes/1/reviews" for 127.0.0.1 at 2023-07-16 21:15:33 -0700
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"review"=>{"body"=>"niiiiiice food", "rating"=>"4"}, "recipe_id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:6:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mReview Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mReview Create (1.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "body", "user_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 4], ["body", "niiiiiice food"], ["user_id", 5], ["recipe_id", 1], ["created_at", "2023-07-17 04:15:33.375464"], ["updated_at", "2023-07-17 04:15:33.375464"]]
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/reviews_controller.rb:10:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 31ms (Views: 1.0ms | ActiveRecord: 13.5ms | Allocations: 4141)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:15:36 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (5.61ms)
+Completed 200 OK in 14ms (Views: 8.1ms | ActiveRecord: 2.5ms | Allocations: 3854)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:17:27 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (18.2ms)
+Completed 200 OK in 61ms (Views: 28.9ms | ActiveRecord: 12.7ms | Allocations: 21347)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:18:14 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (17.91ms)
+Completed 200 OK in 60ms (Views: 30.4ms | ActiveRecord: 13.0ms | Allocations: 21024)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:21:07 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.8ms | Allocations: 7824)
+
+
+  
+NameError (uninitialized constant RecipeShowReviewUserSerializer::ReviewUserSerializer):
+  
+app/serializers/recipe_show_review_user_serializer.rb:5:in `<class:RecipeShowReviewUserSerializer>'
+app/serializers/recipe_show_review_user_serializer.rb:1:in `<main>'
+app/serializers/recipe_show_serializer.rb:4:in `<class:RecipeShowSerializer>'
+app/serializers/recipe_show_serializer.rb:1:in `<main>'
+app/controllers/api/v1/recipes_controller.rb:10:in `show'
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:21:26 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 5.1ms | Allocations: 45157)
+
+
+  
+NameError (uninitialized constant RecipeShowReviewUserSerializer::ReviewUserSerializer):
+  
+app/serializers/recipe_show_review_user_serializer.rb:5:in `<class:RecipeShowReviewUserSerializer>'
+app/serializers/recipe_show_review_user_serializer.rb:1:in `<main>'
+app/serializers/recipe_show_serializer.rb:4:in `<class:RecipeShowSerializer>'
+app/serializers/recipe_show_serializer.rb:1:in `<main>'
+app/controllers/api/v1/recipes_controller.rb:10:in `show'
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:36:39 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (32.8ms)
+Completed 200 OK in 96ms (Views: 55.4ms | ActiveRecord: 16.7ms | Allocations: 57130)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:38:10 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 6.7ms | Allocations: 9591)
+
+
+  
+NoMethodError (undefined method `belong_to' for RecipeShowSerializer:Class
+Did you mean?  belongs_to):
+  
+app/serializers/recipe_show_serializer.rb:5:in `<class:RecipeShowSerializer>'
+app/serializers/recipe_show_serializer.rb:1:in `<main>'
+app/controllers/api/v1/recipes_controller.rb:10:in `show'
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:38:20 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 6.3ms | Allocations: 48692)
+
+
+  
+NoMethodError (undefined method `belong_to' for RecipeShowSerializer:Class
+Did you mean?  belongs_to):
+  
+app/serializers/recipe_show_serializer.rb:5:in `<class:RecipeShowSerializer>'
+app/serializers/recipe_show_serializer.rb:1:in `<main>'
+app/controllers/api/v1/recipes_controller.rb:10:in `show'
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:38:31 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (39.07ms)
+Completed 200 OK in 87ms (Views: 56.6ms | ActiveRecord: 14.4ms | Allocations: 54196)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:39:17 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (18.49ms)
+Completed 200 OK in 54ms (Views: 24.5ms | ActiveRecord: 13.7ms | Allocations: 22610)
+
+
+Started GET "/api/v1/recipes/1" for 127.0.0.1 at 2023-07-16 21:39:45 -0700
+Processing by Api::V1::RecipesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/recipes_controller.rb:9:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recipes_controller.rb:10:in `show'
+[active_model_serializers] Rendered RecipeShowSerializer with ActiveModelSerializers::Adapter::Attributes (22.47ms)
+Completed 200 OK in 75ms (Views: 30.6ms | ActiveRecord: 11.2ms | Allocations: 22651)
+
+
