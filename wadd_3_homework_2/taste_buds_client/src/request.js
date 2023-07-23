@@ -8,7 +8,7 @@ async function get(path) {
 async function req(path, body, method) {
     const options = {
         method: method || 'POST',
-        credentials:'include',
+        credentials: 'include',
         headers: {
             "Content-Type": "application/json",
             'mode': 'cors'
