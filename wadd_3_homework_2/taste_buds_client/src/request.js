@@ -10,8 +10,7 @@ async function req(path, body, method) {
         method: method || 'POST',
         credentials: 'include',
         headers: {
-            "Content-Type": "application/json",
-            'mode': 'cors'
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(body)
     }
@@ -51,5 +50,9 @@ export const Recipe = {
     create(body) {
         return webApi.req('recipes', body)
     },
+    
+    show(id){
+        return webApi.get(`recipes/${id}`)
+    }
 
 }

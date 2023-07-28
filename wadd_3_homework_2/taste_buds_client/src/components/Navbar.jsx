@@ -1,11 +1,9 @@
-import { create } from 'json-server';
 import { NavLink } from 'react-router-dom';
 
 function Navbar(props) {
 
     return (
-        <div className='nav-main'>
-            <div className='nav-second'>
+        <div className='absolute bg-white bg-opacity-50 w-full flex justify-between px-10 h-16 items-center'>
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/recipes'}>Recipes</NavLink>
                 <NavLink to={'/recipes/new'}>New Recipe</NavLink>
@@ -20,7 +18,6 @@ function Navbar(props) {
                         <NavLink to={'/sign-up'}>Sign Up</NavLink>
                     </>
                 }
-            </div>
         </div>
     )
     

@@ -31,11 +31,13 @@ function SignInPage(props) {
     };
 
     return (
-        <div>
-            <h1>Sign In:</h1>
-            <FloatingInput id="email" label="Email" changeHandler={changeHandler}/>
-            <FloatingInput id="password" type="password" label="Password" changeHandler={changeHandler}/>
-            <button className="btn btn-success mt-3" onClick={signIn}>Sign In</button>
+        <div className="p-20">
+            <div className="w-1/2">
+                <h1>Sign In:</h1>
+                <FloatingInput id="email" label="Email" changeHandler={changeHandler}/>
+                <FloatingInput id="password" type="password" label="Password" changeHandler={changeHandler}/>
+                <button className="btn btn-success mt-3" onClick={signIn}>Sign In</button>
+            </div>
         </div>
     )
 };

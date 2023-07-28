@@ -25,14 +25,23 @@ class Api::V1::RecipesController < ApplicationController
         if @recipe.destroy
             render json: { message: "Recipe was deleted successfully!", status: 200 }
         else
-            render json: { message: "Something went Wrong! Please try again.", status: 422}
+            render json: { message: "Something went Wrong! Please try again.", status: 422 }
         end
     end
 
     private
 
     def recipe_params
-        params.require(:recipe).permit(:title, :story, :description, :people_number, :spicy, :salty, :sweet)
+        params.require(:recipe).permit(
+            :image_url,
+            :title,
+            :story,
+            :description,
+            :people_number,
+            :spicy,
+            :salty,
+            :sweet
+        )
     end
 
 end

@@ -8,6 +8,7 @@ import { useState } from "react";
 import { RecipeIndex } from "./components/RecipeIndex";
 import { AuthRoute } from "./components/AuthRoute";
 import { RecipeNewPage } from "./components/RecipeNewPage";
+import { RecipeShowPage } from "./components/RecipeShowPage";
 
 function App() {
   const [ user, setUser] = useState(null);
@@ -28,11 +29,12 @@ function App() {
   };
 
   return (
-    <div className="main">
+    <div className="flex flex-col h-screen w-screen">
       <Navbar user={user} onSignOut={signOut}/>
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/recipes" element={<RecipeIndex/>}/>
+        <Route path="/recipes/:id" element={<RecipeShowPage/>}/>
         <Route exact path="/recipes/new" element={<AuthRoute isAuth={!!user} page={<RecipeNewPage/>}/>}/>
         <Route exact path="/sign-up" element={<SignUp/>}/>
         <Route exact path="/sign-in" element={<SignInPage onSignIn={getCurrentUser}/>}/>
