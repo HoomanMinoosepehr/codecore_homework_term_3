@@ -19,7 +19,6 @@ function SignInPage(props) {
     };
 
     const signIn = () => {
-        console.log("user:", user)
         Sessions.create({user})
                     .then(data => {
                         if(data.status === 200){

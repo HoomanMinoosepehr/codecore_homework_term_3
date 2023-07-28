@@ -50,9 +50,22 @@ export const Recipe = {
     create(body) {
         return webApi.req('recipes', body)
     },
-    
+
     show(id){
         return webApi.get(`recipes/${id}`)
+    },
+
+    delete(id){
+        return webApi.req(`recipes/${id}`, null, 'DELETE')
+    }
+
+}
+
+
+export const Review = {
+
+    create(recipe_id, body) {
+        return webApi.req(`recipes/${recipe_id}/reviews`, body)
     }
 
 }

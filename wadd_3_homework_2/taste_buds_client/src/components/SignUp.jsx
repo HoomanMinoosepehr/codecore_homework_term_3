@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { User } from "../request";
 import { FloatingInput } from "./FloatingInput";
+import { useNavigate } from "react-router-dom";
 
 
 export function SignUp(props) {
     const [user, setUser] = useState({})
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,12 +21,19 @@ export function SignUp(props) {
         console.log("user: ", user)
         User.create(user)
                 .then(data => {
-                    console.log(data)
+                    if (data.status === 200) {
+                        setUser({})
+                        props.onSignIn()
+                        console.log(data)
+                        navigate('/')
+                    } else {
+
+                    }
                 })
     }
 
     return (
-        <div className="signUp-main">
+        <div className="signUp-main w-1/2 mt-36">
             <h1>Sign Up:</h1>
             <FloatingInput label="First Name" id='first_name' changeHandler={handleChange}/>
             <FloatingInput label='Last Name' id='last_name' changeHandler={handleChange}/>

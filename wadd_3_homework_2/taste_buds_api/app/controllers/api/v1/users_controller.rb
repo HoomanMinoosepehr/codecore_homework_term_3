@@ -5,7 +5,8 @@ class Api::V1::UsersController < ApplicationController
         @user.password = params[:password]
         @user.password_confirmation = params[:password_confirmation]
         if @user.save
-            render json: { user: @user, status: :ok }
+            session[:user_id] = @user.id
+            render json: { user: @user, status: 200 }
         else
             render json: { message: @user.errors.messages, status: 422}
         end
