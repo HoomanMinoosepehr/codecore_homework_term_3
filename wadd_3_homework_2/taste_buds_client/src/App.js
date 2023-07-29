@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center h-screen w-screen">
+    <div className="flex flex-col overflow-x-hidden h-screen w-screen">
       <Navbar user={user} onSignOut={signOut}/>
       <Routes>
         <Route exact path="/" element={<Home/>}/>

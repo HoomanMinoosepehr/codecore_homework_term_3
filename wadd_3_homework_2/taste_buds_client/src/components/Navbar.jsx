@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { RedButton } from './Button';
 
 function Navbar(props) {
 
@@ -8,9 +9,9 @@ function Navbar(props) {
                 <NavLink to={'/recipes'}>Recipes</NavLink>
                 <NavLink to={'/recipes/new'}>New Recipe</NavLink>
                 { props.user ? 
-                    <div className='d-flex align-items-center'>
+                    <div className='flex items-center'>
                         <p className='m-3'>Hello, {props.user}</p>
-                        <button className='btn btn-danger m-3' onClick={props.onSignOut}>Sign Out</button>
+                        <RedButton label="Sign Out" onClick={props.onSignOut} />
                     </div>
                     :
                     <>
