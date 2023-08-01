@@ -1,4 +1,3 @@
-import { createStage } from "../gameHelper";
 import Display from "./Display";
 import Stage from "./Stage";
 import StartButton from "./StartButton";
@@ -7,7 +6,7 @@ import { StyledTetris, StyledTetrisWrapper } from "./styles/StyledTetris";
 
 
 export default function Tetris(props) {
-
+    console.log(createStage())
 
     return (
         <StyledTetrisWrapper>
