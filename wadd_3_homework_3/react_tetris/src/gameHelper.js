@@ -1,5 +1,5 @@
-export const STAGE_HEIGHT = 12;
-export const STAGE_WIDTH = 20;
+export const STAGE_HEIGHT = 20;
+export const STAGE_WIDTH = 12;
 
 export function createStage() {
     return Array.from(Array(STAGE_HEIGHT), () => {

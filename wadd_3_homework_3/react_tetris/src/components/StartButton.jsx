@@ -1,11 +1,12 @@
+import { StyledStartButton } from "./styles/StyledStartButton";
 
 
 export default function StartButton(props) {
 
 
     return (
-        <div>
-            Stert Game
-        </div>
+        <StyledStartButton onClick={props.callback}>
+            Start Game
+        </StyledStartButton>
     )
 }

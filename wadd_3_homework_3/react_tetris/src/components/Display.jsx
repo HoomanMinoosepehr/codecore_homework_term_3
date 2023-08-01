@@ -1,10 +1,11 @@
+import { StyledDisplay } from "./styles/StyledDisplay";
 
 
 export default function Display(props) {
 
     return(
-        <div>
+        <StyledDisplay gameOver={props.gameOver}>
             {props.text}
-        </div>
+        </StyledDisplay>
     )
 }

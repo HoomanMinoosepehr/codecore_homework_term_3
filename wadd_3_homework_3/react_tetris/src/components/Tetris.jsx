@@ -2,6 +2,7 @@ import { createStage } from "../gameHelper";
 import Display from "./Display";
 import Stage from "./Stage";
 import StartButton from "./StartButton";
+import { StyledTetris, StyledTetrisWrapper } from "./styles/StyledTetris";
 
 
 
@@ -9,16 +10,18 @@ export default function Tetris(props) {
 
 
     return (
-        <div>
-            <Stage stage={createStage()}/>
-            <div>
-                <div>
-                    <Display text="Score"/>
-                    <Display text="Rows"/>
-                    <Display text="Levels"/>
-                </div>
-                <StartButton/>
-            </div>
-        </div>
+        <StyledTetrisWrapper>
+            <StyledTetris>
+                <Stage stage={createStage()}/>
+                <aside>
+                    <div>
+                        <Display text="Score"/>
+                        <Display text="Rows"/>
+                        <Display text="Levels"/>
+                    </div>
+                    <StartButton/>
+                </aside>
+            </StyledTetris>
+        </StyledTetrisWrapper>
     )
 }

@@ -1,11 +1,10 @@
-
+import { StyledCell } from "./styles/StyledCell";
+import { TETROMINOS } from "../tetrominos";
 
 function Cell(props) {
 
     return(
-        <div>
-            <p>Cell</p>
-        </div>
+        <StyledCell type={'L'} color={TETROMINOS['L'].color}/>
     )
 }
 
