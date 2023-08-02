@@ -3,7 +3,8 @@ import { createStage } from "../../gameHelper";
 
 
 
-export function useStage(player, resetPlayer) {
+export const useStage = (player, resetPlayer) => {
+
     const [stage, setStage] = useState(createStage())
 
     useEffect(() => {
@@ -16,18 +17,19 @@ export function useStage(player, resetPlayer) {
                     if (value !== 0 ){
                         newStage[y + player.pos.y][x + player.pos.x] = [
                             value,
-                            `${player.collided ? 'merged' : "clear"}`
+                            `${player.collided ? 'merged' : 'clear'}`
                         ];
                     }
                 })
             })
+            if (player.collided){
+                resetPlayer(); 
+            }
             return newStage;
         };
-
         setStage( prev => updateStage(prev));
+    }, [player, resetPlayer])
 
-    }, [player])
-
-    
     return [stage, setStage];
+
 }
