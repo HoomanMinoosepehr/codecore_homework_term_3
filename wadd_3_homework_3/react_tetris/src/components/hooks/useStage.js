@@ -27,7 +27,7 @@ export const useStage = (player, resetPlayer) => {
             }
             return newStage;
         };
-        setStage( prev => updateStage(prev));
+        setStage( (prev) => updateStage(prev));
     }, [player, resetPlayer])
 
     return [stage, setStage];
