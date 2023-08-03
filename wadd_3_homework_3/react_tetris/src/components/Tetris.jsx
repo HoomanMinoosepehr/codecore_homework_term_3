@@ -8,6 +8,7 @@ import { createStage, checkCollision } from "../gameHelper";
 import { usePlayer } from "./hooks/usePlayer";
 import { useStage } from "./hooks/useStage";
 import { useState } from "react";
+import { useInterval } from './hooks/useInterval';
 
 export default function Tetris(props) {
     const [dropTime, setDropTime] = useState(null)
@@ -27,6 +28,7 @@ export default function Tetris(props) {
     const startGame = () => {
         setStage(createStage());
         resetPlayer();
+        setDropTime(1000)
         setGameOver(false);
     }
 
@@ -60,6 +62,10 @@ export default function Tetris(props) {
             }
         }
     }
+
+    useInterval(() => {
+        drop();
+    }, dropTime )
 
     return (
         <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)} >
