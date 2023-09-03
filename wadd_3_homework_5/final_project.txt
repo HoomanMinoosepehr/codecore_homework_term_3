@@ -1,0 +1,17 @@
+About the 'Work Shift':
+- This web application is about assigning shifts for employees of a company.
+- as we all know, in some companies employees work based on hours and each week managers assign shift to them.
+- using this application, the owner of the company will buy the service and then can create an account in this website.
+- after creating an account and inside the application owner can create account for managers and also for employees.
+- Then owners and managers can add or remove employees and also assign or unassign shifts to them.
+
+Strategy:
+- The users of this application are Companies who need to assign shift to their employees
+- Goal of this project is help companies to do their works better and can have a better and easier communication with their amployees.
+
+Skeleton:
+- Firs of all is creating account for the company
+- after and in the application owner can add(create account) for the managers.
+- Then, managers can add(create account) for the employees and or they can delete their account from the company.
+- after all of these, owner of the company and also managers can manage the employees and assign shift to them.
+- employees by logging in to the application can check their assigned shifts and also can request days off. also they can send email to their managers.
