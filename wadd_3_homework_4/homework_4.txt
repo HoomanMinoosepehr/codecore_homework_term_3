@@ -1,0 +1,131 @@
+1. What do you think are some of the differences in designing for something that is always with you (like a mobile phone), compared to something you use in a fixed location such as a desktop computer?
+
+- when we are going to use something that is always with us, it means that we may want to use it in some crowd places or use it when we are in hurry, so we need to think about some features that can be more usefull in these cases and somehow create a hierarchy from most usefull thing to least usefull ones. It should use less power sources because in the portable devices power sources are very important. The other importatn matterr is that portable devices use network to transfer data and this network is not stable in all areas so these applications should use less data.
+As the last thing, the portable devices have smaller screen size and because of this the application should be responsive to the different screen sizes.
+
+
+
+2. Think of an app that in your opinion has made poor choices about some tradeoffs or constraints, like the ones the author complains about in the CBS News app (breaking stories into too-small chunks, taking too long to load, and having to scroll past the same photo on each page before getting to any text)?  Describe the app and explain your experience.
+
+
+3. Which do you use more: your phone or a desktop or laptop computer? How much overlap is there in the ways that you use them?  Do you prefer using one over the other?
+
+- I use my phone more. Even when I use my desktop or laptop, there are still some applications that I can do them just with iphone, and in this case I use both of them and they kinda have overlap. But I think its better to say my mobile is part of my self, I have it everywhere, I do tons of my works with it and my life without my mobel would be so much harder.
+
+
+4. What’s your favorite mobile app? Why?  
+
+- my favorite mobile app is Instagram, using instagram I can know about with my frends I can chat with them or also make video calls. also I can see videos and pictures about every fields that I'm excited about or I'm intereted in. This is instagram which has already makes me connected wth my friends, so this my favorite mobile app.
+
+
+5. Have you ever purchased a mobile app that turned out to be too hard to learn?  Or too hard to use?
+
+- No, I haven't had such an experience.
+
+
+6. Do you know people who rarely talk on their phones (preferring to text or email)? How do you think mobile devices are changing how we interact with each other?
+
+- Yes I know some persons who are prefer to use text messaging or send email to other and hate talking with phone. And recently by comming messaging apps these kind of peoples are more reachable, becaus if you call them, for a high chance they won't answer your calls but if message them, they will answer. and also recently, these apps have made it much more simpler to create connection with new people.
+
+
+7. Describe an app that you find “delightful” and explain why, in the same way the author explained his examples of SoundHound and Paper.  Do not use the same app example as question 4.  Also, say whether you think the designers of the app made it both delightful and usable, or sacrificed some usability in their effort to achieve delight.
+
+- one of these apps is my mobile bank application, its design is beatiful and interesting, and the functionality is very usefull and I can do tons of tasks with it, for example I can transfer money, I can check my credit score, I can set my payments ot be done at their specific time and more on.
+The desing of the app and its functionality is very smart, it is easy to find what ever you need to do and also is memorable, so you don't need to waste your time each time to find how you can do something! the responsive design and the place of each item is very good and reachable and also the hierarchy of the buttons are so good, when you are in rush and need to do something very fast you can find it in blink an eye and do the task so fast.  
+
+
+8. Find an app that does a good job of providing help or a tutorial or training about how to use it. Describe the app and how it works.
+
+- Quinyx is name of the app that I use at work to see the shifts that I have, at first it has a copmrehensive tutorial about the different abilities of the application and where you can find different things or buttons. By using this application you can easily see your assigned shifts, or ypu can request a day off and also you can send message to your manager and be in touch with them.
+
+9. Find a friend, family member, or classmate who would be willing to do a usability test conducted by you.  You can ask more than one person, but at least one other person is needed.
+
+- Name: imo (texting application)
+--- Top three problems:
+ 1)  there is call button in the phone book in front of each person's name, so it can be accidentally touched and call someone that you doont want to call them!
+
+ 2) when you call someone using the wireless handsfree, the phone still play the voice from the phone's speaker not through the handsfree!
+
+ 3) the application sometimes works so slow and also when you send a link to someone, after going into the chat page you realize that it hasn't been sent yet! sou you try to send it again and after that you will realize that you have already sent the link two times! and at the first time the screen hadn't been uplaoded while the link was sent!
+
+ most important things to be fixed:
+ 1) the problem regarding the call button is easy to fix and you can easily remove the button, so I will fix it first
+ 2) the problem regarding to talking using the handsfree may not be easy to solve but it is really important and can have a bad effect on the user, so for making the application more user friendly, this problem is better to be solved as sson as possible.
+
+10. Find an app that can be used in both mobile and desktop versions, and try it on at least two different screen sizes (such as smartphone, tablet, laptop, desktop).  Write up your notes on the differences among the versions and answer these questions:
+
+Are there significant differences in features among the versions? What differences did you notice?
+Does one version seem to work significantly better than the others? In what ways?
+How did the designers adapt to smaller screen sizes? Did they scale down the size of elements? Eliminate elements?
+
+- Amazon's application have mobile and desktop application:
+in the desktop application because of having many categories, it is much easier to find something if you want to browes in the application, although both desktop and mobile applications have search bar but when you search something, at the result page you it shows some products from the sponsors and thoss adds occupy a hish space which makes it difficut to search throu, but in desktop application, because of bigger screen size those sponsor adds does't make it very difficult.
+both versions works very fast and efficient so they are good designed, but in searching, the desktop version works better.
+in smaller screen sizes, the icons are still big and take a big space of the screen which means you need to scroll to much to see the next item. also in the mobile  they have eliminated lots of navbar icons which I think is a good approach for it.
+
+
+--------------------------------------------------------------------------------
+
+
+1. Krug has a list of things your site can do that make a user’s goodwill plunge:
+Hiding information that I want, like phone numbers, shipping rates, and prices.
+Making me enter data in a specific format (e.g. no spaces in my credit card number)
+Asking me for information you don’t really need.
+Disingenuous attempts to convince me that you care about me. (“Your call is very important to us.”)
+Putting lots of marketing between me and the content I’m looking for.
+Looking amateurish.
+Which ones annoy you the most, and why? Can you think of any others that aren’t on the list?
+
+- in my opiniont putting lots of marketing between me and the data I'm looking for is soo annoying, because those marketting things waste my time and sometimes at the end I find that the item which I'm looking for not existed here, especially for online markets this matter is so annoying.
+
+
+2. Pick something that really annoys you about a site or an app and try to figure out why the designers did it that way.  Do you think they had a business reason, or were they just careless or didn’t they think about what their users wanted or needed?
+
+- pop up adds sometimes comes up exactly when I got focus on something or I'm reading it and it distracts and ruind my focus and I have to start everything from the beggining and there is more which make it worse, some times I have to wait for example 5 seconds to be able to remove the add or I have to watch the whole add and then I can close it.
+
+3. In this passage, Krug seems to be saying that it’s acceptable to abuse your users as long as you are making a conscious, informed business decision:
+
+        There may be times when you’ll choose to have your site do some of these user-
+
+        unfriendly things deliberately. Sometimes it makes business sense not to do
+
+        exactly what the customer wants. For instance, uninvited pop-ups almost always
+
+        annoy people to some extent. But if your statistics show you can get 10 percent
+
+        more revenue by using pop-ups and you think it’s worth annoying your users, you
+
+        can do it. It’s a business decision. Just be sure you do it in an informed way, rather
+
+        than inadvertently.
+
+Do you agree? Can you reconcile this with his advice to be a mensch?
+
+- yes I'm agree with that, somethimes the website is providing me with some data with no charge and at no cost, so it is acceptable to show me some adds or pop ups but some time the are gonna sell me things and during this procces they show me adds, which reduce the goodwill.
+
+
+4. When a site pops up a message that asks you if you would be willing to give feedback about the site, does that increase or diminish your goodwill?
+
+- actually it can be good and bad, if the pop up this message in every single page it annoys me but if they do it only sometimes, it would be better and also somtimes I might have some feedbacks and want to send them and in this case I can use that form to send my feed back.
+
+
+5. When you open a Website on a mobile device, you are often asked if you want to download the corresponding mobile app instead.  What do you usually do when this happens?
+- if I find the site as a usefull website I usually download its mobile app and yes I usually do this and use the application.
+
+6. Think of a site or app that increased your goodwill and explain what, specifically, it did to earn it. Did these positive feelings cause you to change your behaviour in any way (e.g. recommend it to a friend)?
+
+- yes, sometime there are different apps that do the same job but one of them is more usefull, in this case I would defenitely recommend it to others instead of using the other apps.
+
+7. Find or design an example of an interface that makes it easy to enter a credit card number in the correct format.  (Add this design to your homework directory in a separate file from the text file, for example: credit_card.html)
+
+8. Give an example of a site or app that saves you time.
+- Spotify
+
+9. Find an example of a site that looks less than professional, and say what you would do to improve it.
+- Craiglist: this site looks like a dead website, for make it better I would add more colors and pictures to it and also change categories and remove some irrelevent links and buttons from it, I'm pretty sure that with these small changes, website gets a huge improvement in its userfriendiness.
+
+10. Go to CodeCore’s website (https://codecore.ca), download the app, or do both.  Pick at least 3 tasks to accomplish. (For example, finding information regarding a program, or getting contact details, etc).  Chart your level of goodwill as you use the site.  Write about your experience, good or bad.  Don’t be afraid to mention  things that you may wish to improve.
+- I cannot download the application.
+but about the desktop website I can say:
+the design is attractive and raise up the goodwill. the window to show the outlines looks like very amateurish and it could be lot better if the just make a summarize table and only show the outlines and place a "Read More" link to show the hole document, because for me it was too long to read those documents and I even didn't read one line of those outlines!
+but res of the thing are good!
